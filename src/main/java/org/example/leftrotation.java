@@ -2,9 +2,8 @@ package org.example;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.stream.Collectors;
 
-class Solution {
+class leftrotation {
     public static String countAndSay(int n) {
         String  ii = "1";
         if(n == 1) return "1"; 
