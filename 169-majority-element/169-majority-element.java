@@ -14,21 +14,55 @@ class Solution {
         
         
         
-        int c = 0 ; 
-        int major = 0 ;
-        for(int n : nums){
+//         int c = 0 ; 
+//         int major = 0 ;
+//         for(int n : nums){
             
-            if( c == 0 ){
-                major = n ;
-            }
+//             if( c == 0 ){
+//                 major = n ;
+//             }
             
-            c += (major == n)?1:-1;
+//             c += (major == n)?1:-1;
                 
             
+//         }
+        
+        
+//       return   major ;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+              // we define a counter and an element variable
+        int count = 0;
+        int elm = 0;
+        // Iterating
+        for(int num : nums){
+            // If the count is 0, then we update the element variable with the current value in the array
+            if(count <= 0){
+                elm = num;
+            }
+            // If we see the element again in the array, we increase the count
+            if(num == elm){
+                count++;
+            }
+            // If we don't see the element we decrease the count
+            else{
+                count--;
+            }
         }
+        // In the end, the element that remains in the value will be our majority element
+        return elm;
         
         
-      return   major ;
+        
+        
         
     }
 }
