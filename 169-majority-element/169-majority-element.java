@@ -16,13 +16,13 @@ class Solution {
         
         int c = 0 ; 
         int major = 0 ;
-        for(int i = 0 ; i  <nums.length ; i++){
+        for(int n : nums){
             
             if( c == 0 ){
-                major = nums[i] ;
+                major = n ;
             }
             
-            c += (major == nums[i])?1:-1;
+            c += (major == n)?1:-1;
                 
             
         }
