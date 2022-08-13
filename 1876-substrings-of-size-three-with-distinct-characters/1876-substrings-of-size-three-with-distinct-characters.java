@@ -21,10 +21,10 @@ class Solution {
             }
             
             if( (j-i) == 3 ){
-                map.put(s.charAt(i),map.get(s.charAt(i))-1);
-                if(map.get(s.charAt(i))  == 0 ){
+                 if(map.get(s.charAt(i))  == 1 ){
                    map.remove(s.charAt(i)); 
-                }
+                }else  map.put(s.charAt(i),map.get(s.charAt(i))-1);
+              
                 i++;
             }
             
