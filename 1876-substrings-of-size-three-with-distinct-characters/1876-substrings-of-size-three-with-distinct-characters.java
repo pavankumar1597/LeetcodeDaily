@@ -12,7 +12,8 @@ class Solution {
             
             
             if((j-i) < 3){
-                map.put(s.charAt(j),map.getOrDefault(s.charAt(j),0)+1);
+                char jth =s.charAt(j) ;
+                map.put(jth,map.getOrDefault(jth,0)+1);
                 j++;
             }
             if(map.size() == 3){
@@ -21,9 +22,11 @@ class Solution {
             }
             
             if( (j-i) == 3 ){
-                 if(map.get(s.charAt(i))  == 1 ){
-                   map.remove(s.charAt(i)); 
-                }else  map.put(s.charAt(i),map.get(s.charAt(i))-1);
+                char ith = s.charAt(i);
+                int ic= map.get(ith) ;
+                 if( ic == 1 ){
+                   map.remove(ith); 
+                }else  map.put(ith,ic-1);
               
                 i++;
             }
