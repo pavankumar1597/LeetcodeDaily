@@ -16,12 +16,11 @@ class Solution {
                 map.put(jth,map.getOrDefault(jth,0)+1);
                 j++;
             }
-            if(map.size() == 3){
-                
-              count++;  
-            }
             
             if( (j-i) == 3 ){
+            if(map.size() == 3){
+              count++;  
+            }
                 char ith = s.charAt(i);
                 int ic= map.get(ith) ;
                  if( ic == 1 ){
