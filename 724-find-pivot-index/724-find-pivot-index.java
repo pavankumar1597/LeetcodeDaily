@@ -11,6 +11,7 @@ class Solution {
         for( int i = 1 ; i < arr.length ; i++){
             int right = arr[i-1];
             int left = arr[arr.length-1] - arr[i];
+            
             if(left == right) return i-1 ;
         }
         
