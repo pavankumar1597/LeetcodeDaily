@@ -1,35 +1,28 @@
 class Solution {
-    public int pivotIndex(int[] prefix) {
+    public int pivotIndex(int[] nums) {
         
+           int[] arr = new int[nums.length+1];
+        arr[0] = 0;
         
-        for(int i = 1 ; i < prefix.length;i++ ){
-        
-            prefix[i] = prefix[i] +prefix[i-1];
+        for(int i = 0 ; i < nums.length ; i++){
+            
+            arr[i+1] = arr[i]+nums[i] ;
             
         }
         
-        
-        
-        
-        for(int i = 0  ; i < prefix.length ;i++){
-            int li = 0 ;
-            int ri = 0; 
+        for( int i = 1 ; i < arr.length ; i++){
             
+            int right = arr[i-1];
+            int left = arr[arr.length-1] - arr[i];
             
-            if(i > 0)
-             li = prefix[i-1];
-            
-            ri = prefix[prefix.length-1] - prefix[i];
-            
-            if(li == ri){
-                return i ;
-            }
+                
+                if(left == right){
+                    return i-1 ;
+                }
         }
-            return -1 ;
-
+        
+        
+        return -1;
+        
     }
-    
-    
-
-    
 }
