@@ -6,7 +6,6 @@ class Solution {
         for(char chars  : s.toCharArray()){
             map.put(chars,map.getOrDefault(chars,0)+1);
         }
-        System.out.print(map);
         int sc = 0 ; 
         int count = 0 ;
         
