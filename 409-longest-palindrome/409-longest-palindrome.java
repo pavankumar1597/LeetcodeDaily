@@ -16,11 +16,11 @@ class Solution {
     if(value%2 == 0 ){
         count += value;
     }else {
-        count += (sc==0)?value:value-1;
-        sc++;
+        count += value-1;
+        sc =1;
     } 
 }
         
-        return count ;
+        return (sc == 0)?count:count+1 ;
     }
 }
