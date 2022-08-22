@@ -1,0 +1,1 @@
+https://leetcode.com/problems/first-bad-version/discuss/1555825/Java-TC%3A-O(logN)-or-SC%3A-O(1)-or-Simple-Binary-Search-w-minimum-API-calls
