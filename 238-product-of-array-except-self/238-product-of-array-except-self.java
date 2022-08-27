@@ -7,7 +7,6 @@ class Solution {
 
         int[] right = new int[array.length];
 
-        int[] arr = new int[array.length];
 
         left[0] = 1;
 
@@ -22,9 +21,9 @@ class Solution {
         }
 
         for (int i = 0; i < array.length; i++) {
-            arr[i] = left[i] * right[i];
+            left[i] = left[i] * right[i];
         }
 
-        return arr;
+        return left;
     }
 }
