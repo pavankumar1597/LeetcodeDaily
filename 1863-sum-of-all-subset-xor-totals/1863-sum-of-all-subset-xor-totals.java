@@ -8,8 +8,8 @@ class Solution {
         if(idx == nums.length){
             return sum ; 
         }
-        int xsum = recuring(idx+1,nums,sum ^ nums[idx]);
         int ssum = recuring(idx+1,nums,sum);
+        int xsum = recuring(idx+1,nums,sum ^ nums[idx]);
 
         return xsum + ssum ; 
     }
