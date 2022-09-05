@@ -1,26 +1,22 @@
 class Solution {
+    ArrayList<List<Integer>> mlist = new ArrayList<List<Integer>>();
+
     public List<List<Integer>> subsets(int[] nums) {
-        
-        List<List<Integer>> newlist = new ArrayList<>();
-        
-        newlist.add(new ArrayList<Integer>());
-        for(int i=0; i<nums.length ; i++){
-            int n = newlist.size();
-            
-            for(int j=0; j<n ; j++){
-            List<Integer>  set = new ArrayList<>(newlist.get(j));
-                set.add(nums[i]);
-            newlist.add(set);
-            
-            }    
-            
-            
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        subset(0, nums, list);
+        return mlist;
+    }
+
+    void subset(int index, int[] nums, ArrayList<Integer> list) {
+        if (index == nums.length) {
+            mlist.add(new ArrayList<Integer>(list));
+            return ;
         }
-        
-        
-        
-        
-        return newlist ;
-        
+
+        list.add(nums[index]);
+        subset(index + 1, nums, list);
+        list.remove(list.size() - 1);
+
+        subset(index + 1, nums, list);
     }
 }
