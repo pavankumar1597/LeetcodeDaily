@@ -54,7 +54,7 @@ class Solution {
         sp.next = null ;
         
         
-        while( temp!= null && temp.next != null){
+        while( temp.next != null){
             
             temp= temp.next ; 
             
