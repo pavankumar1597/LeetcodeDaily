@@ -1,48 +1,48 @@
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        
-        
-        
-        
-List<Integer> array = Arrays.stream(nums).boxed().collect(Collectors.toList());
-        
-       // Write your code here.
-
-       List<List<Integer>>  arrays = new ArrayList<List<Integer>>();
-
-ArrayList<Integer> list =  new  ArrayList<Integer>();
-    if(array.size() == 0) return arrays ;
-    perm(0,array,list,arrays);
-    return arrays ;
-  }
-
-
-
-
-  
-  static void perm(int index,List<Integer> ogi ,List<Integer> list  ,List<List<Integer>>  arrays){
-  if(index == ogi.size())
-  {
-    arrays.add(new ArrayList<>(list));
-    return ; 
-  }
-
-
-
-
-for(int i = 0 ; i < ogi.size() ; i++){
-
-  if(list.contains(ogi.get(i))){
-    continue ;
-  }else{
-    list.add(ogi.get(i));
-    perm(index+1,ogi,list,arrays) ;
-    list.remove(list.size()-1);
+        ArrayList<List<Integer>> ans = new ArrayList<>();
+        solve(0,nums,ans,new ArrayList<Integer>());  
+       return ans ; 
+    }
     
-  }
-}
-  
-
     
-  }
+   void solve(int i, int[] nums, ArrayList<List<Integer>> ans , ArrayList<Integer> list  ){
+        
+        if(i >= nums.length ){
+            ans.add(help(nums));
+       return  ;     
+        }
+       
+       for(int j = i ; j < nums.length ; j++){
+           swap(i , j, nums);
+    solve(i+1,nums,ans,new ArrayList<Integer>());  
+
+           swap(i , j, nums);
+       }
+       
+        
+        
+        
+        
+        
+    }
+    
+      private List<Integer> help(int[] nums){
+      List<Integer> current = new ArrayList<>();
+      for(int num: nums){
+        current.add(num);
+      }
+      return current;
+    }
+    
+    
+    
+    
+    int[] swap(int i , int j , int[] nums){
+        int t   =  nums[i];
+        nums[i] = nums[j];
+        nums[j] = t ;
+        return nums ;
+        
+    }
 }
