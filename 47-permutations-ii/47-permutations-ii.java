@@ -16,8 +16,7 @@ class Solution {
         }
        
        for(int j = i ; j < nums.length ; j++){
-           if(j > i && nums[j] == nums[j-1])
-               continue ;
+         
            swap(i , j, nums);
         solve(i+1,nums,ans,new ArrayList<Integer>());  
            swap(i , j, nums);
