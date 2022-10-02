@@ -8,6 +8,14 @@ public class specialindex {
         System.out.println(evenPrefixSum(A));
         System.out.println(oddPrefixSum(A));
 
+
+
+
+
+
+
+
+
     }
       ArrayList<Integer> evenPrefixSum(ArrayList<Integer> E){
 
