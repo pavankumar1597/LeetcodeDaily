@@ -5,10 +5,9 @@ class Solution {
         
         while(a<=b){
          char temp = s[a];
-          s[a] =  s[b];
-           s[b] =temp ;
-            b--;
-            a++;
+          s[a++] =  s[b];
+           s[b--] =temp ;
+
             
         }
         
