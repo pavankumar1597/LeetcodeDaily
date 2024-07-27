@@ -3,6 +3,7 @@ class Solution {
         int a = 0 ; 
         int b = s.length-1 ;
         
+        
         while(a<=b){
          char temp = s[a];
           s[a++] =  s[b];
